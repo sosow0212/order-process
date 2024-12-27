@@ -1,15 +1,10 @@
-server:
-  port: 8080
-  servlet:
-    context-path: /api
-
 spring:
   h2:
     console:
       enabled: true
   datasource:
     driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:store;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=MySQL
+    url: jdbc:h2:mem:payment;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=MySQL
     username: sa
     password: sa
 
@@ -24,7 +19,3 @@ spring:
 
 swagger:
   url: http://localhost:8080
-
-jwt:
-  secret: jwtscretjwtscretjwtscretjwtscretjwtscretjwtscretjwtscretjwtscretjwtscretjwtscretjwtscretjwtscretjwtscret
-  expiration-period: 10000
