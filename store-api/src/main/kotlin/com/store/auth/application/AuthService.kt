@@ -41,7 +41,10 @@ class AuthService(
         val auth = authRepositoryPort.findByUsername(command.username)
             ?: throw CustomException(AuthExceptionType.AUTH_NOT_FOUND_EXCEPTION)
 
-        require(auth.matches(command.password, authPasswordEncryptor)) { PASSWORD_INVALID_EXCEPTION }
+        require(auth.matches(command.password, authPasswordEncryptor)) {
+            PASSWORD_INVALID_EXCEPTION
+        }
+
         return tokenProviderPort.create(auth.id)
     }
 }
