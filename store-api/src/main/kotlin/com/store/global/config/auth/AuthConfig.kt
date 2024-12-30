@@ -33,6 +33,6 @@ class AuthConfig(
         return PathMatcherInterceptor(loginValidCheckerInterceptor)
             .excludePathPattern("/**", OPTIONS)
             .excludePathPattern("/auth", POST, GET)
-            .addPathPatterns("/auth/test", GET, POST, PATCH, DELETE)
+            .addPathPatterns("/products/**", GET, POST, PATCH, DELETE)
     }
 }
