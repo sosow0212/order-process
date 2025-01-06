@@ -3,18 +3,18 @@ package com.store.product.adapter.out.persistence
 import com.store.product.adapter.out.persistence.entity.ProductJpaRepository
 import com.store.product.adapter.out.persistence.entity.ProductPersistenceMapper
 import com.store.product.adapter.out.persistence.entity.ProductQueryRepository
-import com.store.product.application.port.out.ProductRepository
+import com.store.product.application.port.out.ProductRepositoryPort
 import com.store.product.domain.Product
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Repository
 import org.springframework.transaction.annotation.Transactional
 
 @Repository
-class ProductRepositoryAdapter(
+class ProductRepositoryPortAdapter(
     private val productPersistenceMapper: ProductPersistenceMapper,
     private val productJpaRepository: ProductJpaRepository,
     private val productQueryRepository: ProductQueryRepository
-) : ProductRepository {
+) : ProductRepositoryPort {
 
     @Transactional
     override fun findById(id: Long): Product? {

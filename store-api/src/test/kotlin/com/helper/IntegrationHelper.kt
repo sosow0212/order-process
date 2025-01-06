@@ -8,7 +8,7 @@ import org.springframework.boot.test.web.server.LocalServerPort
 import org.springframework.jdbc.core.JdbcTemplate
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class IntegrationHelper() {
+class IntegrationHelper {
 
     @Autowired
     private lateinit var jdbcTemplate: JdbcTemplate
@@ -17,7 +17,7 @@ class IntegrationHelper() {
     private var port: Int = 0
 
     @BeforeEach
-    fun init() {
+    protected fun init() {
         RestAssured.port = port
         validateH2Database()
         val truncateAllTablesQuery = jdbcTemplate.queryForList(

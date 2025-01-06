@@ -2,7 +2,7 @@ package com.store.product.application.port.out
 
 import com.store.product.domain.Product
 
-interface ProductRepository {
+interface ProductRepositoryPort {
 
     fun findById(id: Long): Product?
 
