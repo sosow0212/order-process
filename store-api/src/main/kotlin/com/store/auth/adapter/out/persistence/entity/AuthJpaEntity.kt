@@ -17,5 +17,4 @@ class AuthJpaEntity(
 
     @Column(nullable = false)
     val password: String,
-) {
-}
+)
